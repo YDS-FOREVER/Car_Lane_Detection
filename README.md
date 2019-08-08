@@ -1,4 +1,10 @@
-# 传统车道线检测  
+#基本方案：
+a、通过sobel的x方向的梯度值，然后进行阈值来二值化图像，然后根据开车前方的感兴趣区域进行透射变换，求出其鸟瞰图。
+b、然后用上半部分图像进行计算直方图，然后根据最大值来确定滑动窗的起始中心，
+c、计算每个滑动窗里的车道线坐标，然后计算总的均值，并更新下个滑动窗的中心坐标
+d、通过所有的滑动窗获得的车道线坐标后进行二次线性拟合，然后求出车道线。
+
+#传统车道线检测  
 Advanced_Lane_Detection项目的复现，更换了其中的数据，修改了相应脚本，添加了可视化功能。话不多说，直接上图显示效果。  
 <div align=center><img width="640" height="480" src="https://github.com/chiyukunpeng/Tradition_Lane_Detection/blob/master/result.png"/></div>
 
